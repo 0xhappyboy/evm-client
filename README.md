@@ -2,6 +2,12 @@
 
 A Lightweight EVM Client Rust library for seamless interaction with multiple EVM-compatible blockchains. Connect to 15+ chains with automatic RPC failover and built-in wallet support.
 
+# Depend
+
+```shell
+cargo add evm-client
+```
+
 # Example
 
 ## Basic Connection Example
