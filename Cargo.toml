@@ -1,0 +1,13 @@
+[package]
+name = "evm-client"
+version = "0.1.5"
+edition = "2024"
+authors = ["happyboy <superhappyboy1995@gmail.com>"]
+description = "A Lightweight EVM Client Rust library for seamless interaction with multiple EVM-compatible blockchains. Connect to 15+ chains with automatic RPC failover and built-in wallet support."
+keywords = ["evm-client", "crypto", "evm"]
+license = "Apache-2.0"
+readme = "README.md"
+repository = "https://github.com/0xhappyboy/evm-client"
+
+[dependencies]
+ethers = { version = "2.0", features = ["ws", "openssl"] }
