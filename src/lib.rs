@@ -423,4 +423,26 @@ impl EvmClient {
             .map_err(|e| EvmClientError::RpcError(format!("Health check failed: {}", e)))?;
         Ok(())
     }
+
+    // get block interval time, unit: second.
+    pub fn get_block_interval_time(&self) -> Option<u64> {
+        match self.evm_type {
+            Some(EvmType::ETHEREUM_MAINNET) => Some(12),
+            Some(EvmType::ARB_MAINNET) => Some(1),
+            Some(EvmType::BSC_MAINNET) => Some(3),
+            Some(EvmType::BASE_MAINNET) => Some(2),
+            Some(EvmType::HYPEREVM_MAINNET) => Some(2),
+            Some(EvmType::PLASMA_MAINNET) => Some(2),
+            Some(EvmType::POLYGON_MAINNET) => Some(2),
+            Some(EvmType::OPTIMISM_MAINNET) => Some(2),
+            Some(EvmType::ZKSYNC_MAINNET) => Some(2),
+            Some(EvmType::STARKNET_MAINNET) => Some(10),
+            Some(EvmType::AVALANCHE_MAINNET) => Some(2),
+            Some(EvmType::FANTOM_MAINNET) => Some(1),
+            Some(EvmType::RONIN_MAINNET) => Some(3),
+            Some(EvmType::SKALE_MAINNET) => Some(5),
+            Some(EvmType::IMMUTABLE_MAINNET) => Some(2),
+            None => None,
+        }
+    }
 }
